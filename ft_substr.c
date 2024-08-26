@@ -1,6 +1,16 @@
-#include "libft.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: agozlan <agozlan@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/08/26 16:14:27 by agozlan           #+#    #+#             */
+/*   Updated: 2024/08/26 16:15:01 by agozlan          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-//Alloue (avec malloc(3)) et retourne une chaîne de caractères issue de la chaîne ’s’. Cette nouvelle chaîne commence à l’index ’start’ et a pour taille maximale ’len’.
+#include "libft.h"
 
 #include <stdio.h>
 

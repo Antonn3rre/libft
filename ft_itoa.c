@@ -1,9 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: agozlan <agozlan@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/08/26 15:52:44 by agozlan           #+#    #+#             */
+/*   Updated: 2024/08/26 15:54:17 by agozlan          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 static int	get_size(int n)
 {
-	long num;
-	int	size;
+	long	num;
+	int		size;
 
 	size = 0;
 	if (n < 0)
@@ -44,25 +56,25 @@ static char	*put_num(int n, int size, char *str)
 	}
 	return (str);
 }
+
 char	*ft_itoa(int n)
 {
 	char	*str;
-	int	size;
+	int		size;
 
 	if (n == 0)
 	{
 		str = malloc(sizeof(char) * 2);
 		if (str == NULL)
-			return NULL;
+			return (NULL);
 		str[0] = '0';
 		str[1] = 0;
 		return (str);
 	}
-
 	size = get_size(n);
-	str = malloc(sizeof(char) * (size+ 1));
+	str = malloc(sizeof(char) * (size + 1));
 	if (str == NULL)
-		return NULL;
+		return (NULL);
 	str = put_num(n, size, str);
 	return (str);
 }

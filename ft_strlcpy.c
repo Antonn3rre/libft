@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: agozlan <agozlan@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/08/26 16:09:01 by agozlan           #+#    #+#             */
+/*   Updated: 2024/08/26 16:09:44 by agozlan          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-static int ft_strle(const char *str)
+static int	ft_strle(const char *str)
 {
 	int	i;
 
@@ -10,9 +22,9 @@ static int ft_strle(const char *str)
 	return (i);
 }
 
-size_t ft_strlcpy(char *dest, const char *src, size_t size)
+size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 {
-	size_t i;
+	size_t	i;
 
 	i = 0;
 	if (size == 0)
@@ -25,4 +37,3 @@ size_t ft_strlcpy(char *dest, const char *src, size_t size)
 	dest[i] = 0;
 	return (ft_strle(src));
 }
-	//return lenght of src

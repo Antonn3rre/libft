@@ -1,8 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: agozlan <agozlan@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/08/26 16:01:54 by agozlan           #+#    #+#             */
+/*   Updated: 2024/08/26 16:02:57 by agozlan          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 static void	ft_putchar(int n, int fd)
 {
-	char num = n + '0';
+	char	num;
+
+	num = n + '0';
 	write(fd, &num, 1);
 }
 
@@ -25,5 +39,4 @@ void	ft_putnbr_fd(int n, int fd)
 	}
 	ft_putnbr_fd(n / 10, fd);
 	ft_putchar(n % 10, fd);
-
 }
