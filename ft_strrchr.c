@@ -7,11 +7,11 @@ char	*ft_strrchr(const char *s, int c)
 	i = 0;
 	while (s[i])
 		i++;
-	if (c == s[i])
+	if ((char)c == s[i])
 		return (char *)&s[i];
 	while (i >= 0)
 	{
-		if (c == s[i])
+		if ((char)c == s[i])
 			return (char *)&s[i];
 		i--;
 	}
