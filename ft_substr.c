@@ -6,7 +6,7 @@
 /*   By: agozlan <agozlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 16:14:27 by agozlan           #+#    #+#             */
-/*   Updated: 2024/08/26 16:15:01 by agozlan          ###   ########.fr       */
+/*   Updated: 2024/08/29 14:51:56 by agozlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,24 @@ static size_t	ft_strle(char const *s)
 	return (i);
 }
 
+static char	*create_str(size_t len, size_t s_len, unsigned int start)
+{
+	char	*str;
+	size_t	t_len;
+
+	if (len > s_len - start)
+		t_len = s_len - start;
+	else
+		t_len = len;
+	str = malloc(sizeof(char) * (t_len + 1));
+	return (str);
+}
+
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*str;
 	size_t	i;
 	size_t	s_len;
-	size_t	t_len;
 
 	if (!s)
 		return (NULL);
@@ -41,11 +53,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 			str[0] = 0;
 		return (str);
 	}
-	if (len > s_len - start)
-		t_len = s_len - start;
-	else
-		t_len = len;
-	str = malloc(sizeof(char) * (t_len + 1));
+	str = create_str(len, s_len, start);
 	if (!str)
 		return (NULL);
 	i = 0;

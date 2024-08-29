@@ -6,7 +6,7 @@ SRCS = ft_lstdelone.c ft_split.c ft_putnbr_fd.c ft_strtrim.c ft_strmapi.c ft_str
 OBJS = $(SRCS:.c=.o)
 
 # Fichiers sources pour les bonus
-BONUS_SRCS = ft_lstnew.c ft_lstadd_back.c ft_lstadd_front.c ft_lstlast.c
+BONUS_SRCS = ft_lstmap.c ft_lstiter.c ft_lstclear.c ft_lstdelone.c ft_lstsize.c ft_lstnew.c ft_lstadd_back.c ft_lstadd_front.c ft_lstlast.c
 BONUS_OBJS = $(BONUS_SRCS:.c=.o)
 
 # Compilateur et options de compilation

@@ -6,7 +6,7 @@
 /*   By: agozlan <agozlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 16:13:11 by agozlan           #+#    #+#             */
-/*   Updated: 2024/08/26 16:13:43 by agozlan          ###   ########.fr       */
+/*   Updated: 2024/08/29 14:43:33 by agozlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,18 +37,11 @@ static int	check_end(char const *s1, char const *set, size_t j)
 	return (1);
 }
 
-char	*ft_strtrim(char const *s1, char const *set)
+static int	get_size(char const *s1, char const *set, int i)
 {
-	size_t	i;
 	size_t	size;
-	char	*str;
-	size_t	j;
 
-	i = 0;
 	size = 0;
-	while (in_set(s1[i], set))
-		i++;
-	j = i;
 	while (s1[i])
 	{
 		if (!in_set(s1[i], set))
@@ -61,6 +54,21 @@ char	*ft_strtrim(char const *s1, char const *set)
 		}
 		i++;
 	}
+	return (size);
+}
+
+char	*ft_strtrim(char const *s1, char const *set)
+{
+	size_t	i;
+	size_t	size;
+	char	*str;
+	size_t	j;
+
+	i = 0;
+	while (in_set(s1[i], set))
+		i++;
+	j = i;
+	size = get_size(s1, set, i);
 	str = malloc(sizeof(char) * (size + 1));
 	if (str == NULL)
 		return (NULL);
