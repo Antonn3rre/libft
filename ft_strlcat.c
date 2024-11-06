@@ -6,7 +6,7 @@
 /*   By: agozlan <agozlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 16:08:33 by agozlan           #+#    #+#             */
-/*   Updated: 2024/08/26 16:08:50 by agozlan          ###   ########.fr       */
+/*   Updated: 2024/09/20 10:50:22 by agozlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static size_t	ft_strle(const char *str)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
 	while (str[i])

@@ -14,24 +14,7 @@ int	ft_lstsize(t_list *lst);
 t_list	*ft_lstlast(t_list *lst);
 void	ft_lstadd_back(t_list **lst, t_list *new);
 void	ft_lstdelone(t_list *lst, void (*del)(void *));
-
-
-void ft_lstclear(t_list **lst) {
-    t_list *current;
-    t_list *next;
-
-    if (lst == NULL) {
-        return;
-    }
-
-    current = *lst;
-    while (current != NULL) {
-        next = current->next;
-        free(current);
-        current = next;
-    }
-    lst = NULL;
-}
+void	ft_lstclear(t_list **lst, void (*del)(void *));
 
 int main() {
     // Créer une liste avec un élément
@@ -62,10 +45,6 @@ int main() {
     t_list *dernier = ft_lstlast(list);
     printf("Dernier : %d\n", *(int *)(dernier->content));
 
-    // Supprimer un élément (par exemple, le deuxième)
-    ft_lstdelone(list, free);
-	list = 0;
-
     // Afficher les contenus des éléments de la liste après suppression
     printf("Après suppression du deuxième élément:\n");
     current = list;
@@ -74,7 +53,7 @@ int main() {
         current = current->next;
     }
     // Libérer la mémoire allouée pour la liste restante
-    ft_lstclear(&list);
+    ft_lstclear(&list, free);
     return 0;
 }
 
