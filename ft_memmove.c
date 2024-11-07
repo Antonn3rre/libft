@@ -6,7 +6,7 @@
 /*   By: agozlan <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 15:45:28 by agozlan           #+#    #+#             */
-/*   Updated: 2024/11/07 11:57:39 by agozlan          ###   ########.fr       */
+/*   Updated: 2024/11/07 15:33:37 by agozlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 
 	str1 = (unsigned char *)src;
 	str2 = (unsigned char *)dest;
-	if (str1 < str2)
+	if (str1 > str2)
 	{
 		i = 0;
 		while (i < n)
@@ -32,7 +32,7 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	else
 	{
 		i = n - 1;
-		while (i > -1)
+		while ((int)i > -1)
 		{
 			str2[i] = str1[i];
 			i--;
