@@ -6,7 +6,7 @@
 /*   By: agozlan <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 15:45:28 by agozlan           #+#    #+#             */
-/*   Updated: 2024/11/06 16:14:36 by agozlan          ###   ########.fr       */
+/*   Updated: 2024/11/07 11:57:39 by agozlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-
 	unsigned char	*str1;
 	unsigned char	*str2;
 	size_t			i;
