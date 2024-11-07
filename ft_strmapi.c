@@ -6,13 +6,13 @@
 /*   By: agozlan <agozlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 16:10:12 by agozlan           #+#    #+#             */
-/*   Updated: 2024/08/26 16:10:17 by agozlan          ###   ########.fr       */
+/*   Updated: 2024/11/07 13:31:57 by agozlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strle(char const *str)
+static size_t	ft_strle(char const *str)
 {
 	size_t	i;
 
