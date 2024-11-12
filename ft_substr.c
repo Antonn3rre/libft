@@ -3,16 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: agozlan <agozlan@student.42.fr>            +#+  +:+       +#+        */
+/*   By: agozlan <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/26 16:14:27 by agozlan           #+#    #+#             */
-/*   Updated: 2024/08/29 14:51:56 by agozlan          ###   ########.fr       */
+/*   Created: 2024/11/12 10:55:34 by agozlan           #+#    #+#             */
+/*   Updated: 2024/11/12 10:59:23 by agozlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-#include <stdio.h>
 
 static size_t	ft_strle(char const *s)
 {

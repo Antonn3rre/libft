@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: agozlan <agozlan@student.42.fr>            +#+  +:+       +#+        */
+/*   By: agozlan <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/26 16:10:12 by agozlan           #+#    #+#             */
-/*   Updated: 2024/11/07 13:31:57 by agozlan          ###   ########.fr       */
+/*   Created: 2024/11/12 11:32:30 by agozlan           #+#    #+#             */
+/*   Updated: 2024/11/12 11:38:30 by agozlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 		return (NULL);
 	while (s[i])
 	{
-		str[i] = f(i, s[i]);
+		str[i] = (*f)(i, s[i]);
 		i++;
 	}
 	str[i] = 0;

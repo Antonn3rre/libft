@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: agozlan <agozlan@student.42.fr>            +#+  +:+       +#+        */
+/*   By: agozlan <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/26 15:52:44 by agozlan           #+#    #+#             */
-/*   Updated: 2024/08/26 15:54:17 by agozlan          ###   ########.fr       */
+/*   Created: 2024/11/12 11:29:51 by agozlan           #+#    #+#             */
+/*   Updated: 2024/11/12 11:31:50 by agozlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,12 @@ static int	get_size(int n)
 	int		size;
 
 	size = 0;
-	if (n < 0)
+	num = n;
+	if (num < 0)
 	{
 		size++;
-		num = n;
 		num = -num;
 	}
-	else
-		num = n;
 	while (num > 0)
 	{
 		num /= 10;

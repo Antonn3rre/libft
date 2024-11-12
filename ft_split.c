@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: agozlan <agozlan@student.42.fr>            +#+  +:+       +#+        */
+/*   By: agozlan <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/26 16:03:33 by agozlan           #+#    #+#             */
-/*   Updated: 2024/08/29 15:21:12 by agozlan          ###   ########.fr       */
+/*   Created: 2024/11/12 11:16:08 by agozlan           #+#    #+#             */
+/*   Updated: 2024/11/12 11:26:22 by agozlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ static char	fill_word(char *tab, char const *s, char c, size_t *i)
 	return (s[*i]);
 }
 
-static int	do_a_split(char const *s, char c, char **tab, size_t *x)
+static int	do_a_split(char const *s, char c, char **tab, size_t x)
 {
 	size_t	i;
 
@@ -72,11 +72,11 @@ static int	do_a_split(char const *s, char c, char **tab, size_t *x)
 	{
 		if (s[i] != c)
 		{
-			tab[*x] = malloc(sizeof(char) * (get_size(s, c, i) + 1));
-			if (!tab[*x])
+			tab[x] = malloc(sizeof(char) * (get_size(s, c, i) + 1));
+			if (!tab[x])
 				return (0);
-			fill_word(tab[*x], s, c, &i);
-			(*x)++;
+			fill_word(tab[x], s, c, &i);
+			x++;
 			if (!s[i])
 				break ;
 		}
@@ -99,9 +99,9 @@ char	**ft_split(char const *s, char c)
 	if (!tab)
 		return (NULL);
 	x = 0;
-	check_error = do_a_split(s, c, tab, &x);
+	check_error = do_a_split(s, c, tab, x);
 	if (!check_error)
 		return (NULL);
-	tab[x] = 0;
+	tab[word] = 0;
 	return (tab);
 }

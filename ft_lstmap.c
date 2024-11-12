@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: agozlan <agozlan@student.42.fr>            +#+  +:+       +#+        */
+/*   By: agozlan <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/27 17:51:15 by agozlan           #+#    #+#             */
-/*   Updated: 2024/08/29 15:00:16 by agozlan          ###   ########.fr       */
+/*   Created: 2024/11/12 12:03:53 by agozlan           #+#    #+#             */
+/*   Updated: 2024/11/12 12:03:55 by agozlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static void	ftlstclear(t_list **lst, void (*del)(void *))
 	while (*lst)
 	{
 		tmp = (*lst)->next;
-		del((*lst)->content);
+		(*del)((*lst)->content);
 		free(*lst);
 		*lst = tmp;
 	}
@@ -67,7 +67,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	new_list = NULL;
 	while (lst)
 	{
-		new_elem = ftlstnew(f(lst->content));
+		new_elem = ftlstnew((*f)(lst->content));
 		if (!new_elem)
 		{
 			ftlstclear(&new_list, del);

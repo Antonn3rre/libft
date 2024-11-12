@@ -6,7 +6,7 @@
 /*   By: agozlan <agozlan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 15:42:45 by agozlan           #+#    #+#             */
-/*   Updated: 2024/08/29 15:07:42 by agozlan          ###   ########.fr       */
+/*   Updated: 2024/11/12 11:48:53 by agozlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
 	if (lst && del)
 	{
-		del(lst->content);
+		(*del)(lst->content);
 		free(lst);
 	}
 }

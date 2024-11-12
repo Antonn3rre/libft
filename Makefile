@@ -2,8 +2,7 @@
 NAME = libft.a
 
 # Fichiers sources
-SRCS = ft_lstdelone.c \
-       ft_split.c \
+SRCS = ft_split.c \
        ft_putnbr_fd.c \
        ft_strtrim.c \
        ft_strmapi.c \
@@ -11,19 +10,15 @@ SRCS = ft_lstdelone.c \
        ft_itoa.c \
        ft_putchar_fd.c  \
        ft_strncmp.c \
-       ft_lstadd_front.c  \
        ft_putendl_fd.c  \
        ft_strrchr.c \
        ft_atoi.c \
-       ft_lstlast.c \
        ft_putstr_fd.c \
        ft_substr.c \
        ft_bzero.c \
-       ft_lstnew.c \
        ft_strchr.c \
        ft_tolower.c \
        ft_calloc.c \
-       ft_lstsize.c \
        ft_strdup.c \
        ft_toupper.c \
        ft_isalnum.c \
@@ -73,8 +68,8 @@ $(NAME): $(OBJS)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 # Compilation des fichiers objets bonus
-bonus: $(BONUS_OBJS)
-	ar rcs $(NAME) $(BONUS_OBJS)
+bonus: $(BONUS_OBJS) $(OBJS)
+	ar rcs $(NAME) $(BONUS_OBJS) $(OBJS)
 
 # Nettoyage des objets
 clean:
