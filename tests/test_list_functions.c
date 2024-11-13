@@ -1,21 +1,28 @@
-#include <stdio.h>
-#include <ctype.h>
-#include <string.h>
-#include <bsd/string.h>
-
 #include "libft.h"
 #include <stdio.h>
 #include <stdlib.h>
 
+void	del(void * c)
+{
+	c = 0;
+}
 
-t_list	*ft_lstnew(void *content);
-void	ft_lstadd_front(t_list **lst, t_list *new);
-int	ft_lstsize(t_list *lst);
-t_list	*ft_lstlast(t_list *lst);
-void	ft_lstadd_back(t_list **lst, t_list *new);
-void	ft_lstdelone(t_list *lst, void (*del)(void *));
-void	ft_lstclear(t_list **lst, void (*del)(void *));
+void	add_one(void * c)
+{
+	int	*d;
 
+	d = (int *)c;
+	(*d)++;
+}
+
+void	*add_hundred(void * c)
+{
+	int	*d;
+
+	d = (int *)c;
+	(*d)+=100;
+	return (c);
+}
 int main() {
     // Créer une liste avec un élément
     int value1 = 42;
@@ -45,14 +52,25 @@ int main() {
     t_list *dernier = ft_lstlast(list);
     printf("Dernier : %d\n", *(int *)(dernier->content));
 
-    // Afficher les contenus des éléments de la liste après suppression
-    printf("Après suppression du deuxième élément:\n");
+    // Afficher les contenus des éléments de la liste après avoir ajoute +1
+    printf("Après avoir ajoute +1 a tout:\n");
+    ft_lstiter(list, &add_one);
     current = list;
     while (current != NULL) {
         printf("Element content: %d\n", *(int *)(current->content));
         current = current->next;
     }
+
+    printf("Apres avoir cree une nouvelle liste qui reproduit l'autre +100\n");
+    t_list *new;
+    new = ft_lstmap(list, &add_hundred, &del);
+    current = new;
+    while (current != NULL) {
+        printf("Element content: %d\n", *(int *)(current->content));
+        current = current->next;
+    }
+
     // Libérer la mémoire allouée pour la liste restante
-    ft_lstclear(&list, free);
+    ft_lstclear(&list, &del);
     return 0;
 }
