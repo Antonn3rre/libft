@@ -6,7 +6,7 @@
 /*   By: agozlan <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 11:41:35 by agozlan           #+#    #+#             */
-/*   Updated: 2024/11/12 11:41:43 by agozlan          ###   ########.fr       */
+/*   Updated: 2024/11/24 16:22:24 by agozlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,6 @@ void	ft_putendl_fd(char *s, int fd)
 	int	i;
 
 	i = 0;
-	while (s[i])
-	{
-		write(fd, &s[i], 1);
-		i++;
-	}
+	ft_putstr_fd(s, fd);
 	write(fd, "\n", 1);
 }

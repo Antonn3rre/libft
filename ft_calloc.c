@@ -6,7 +6,7 @@
 /*   By: agozlan <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 10:52:48 by agozlan           #+#    #+#             */
-/*   Updated: 2024/11/12 10:52:50 by agozlan          ###   ########.fr       */
+/*   Updated: 2024/11/24 16:11:40 by agozlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,6 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	str = malloc(total);
 	if (str == NULL)
 		return (NULL);
-	while (i < total)
-	{
-		str[i] = 0;
-		i++;
-	}
+	ft_bzero(str, total);
 	return ((void *)str);
 }

@@ -6,21 +6,11 @@
 /*   By: agozlan <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 10:55:34 by agozlan           #+#    #+#             */
-/*   Updated: 2024/11/12 10:59:23 by agozlan          ###   ########.fr       */
+/*   Updated: 2024/11/24 16:21:51 by agozlan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-static size_t	ft_strle(char const *s)
-{
-	size_t	i;
-
-	i = 0;
-	while (s[i])
-		i++;
-	return (i);
-}
 
 static char	*create_str(size_t len, size_t s_len, unsigned int start)
 {
@@ -43,7 +33,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 	if (!s)
 		return (NULL);
-	s_len = ft_strle(s);
+	s_len = ft_strlen(s);
 	if (start >= s_len)
 	{
 		str = malloc(sizeof(char));
